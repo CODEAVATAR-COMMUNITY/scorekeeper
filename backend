@@ -1,0 +1,79 @@
+package com.example.android.scorekeeper;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    int foul1 =0, foul2 =0;
+    int teama = 0,teamb= 0;
+     
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+    }
+    public void displayteama()
+    {
+      TextView  r = (TextView) findViewById(R.id.team1);
+      r.setText(teama);
+    }
+    public void displayteamb()
+    {
+        TextView t = (TextView) findViewById(R.id.team2);
+        t.setText(teamb);
+    }
+
+    public void displayfoula ()
+    {
+       TextView  y= (TextView) findViewById(R.id.foula);
+       foul1 = foul1 +1;
+       y.setText(foul1);
+    }
+    public void displayfoulb()
+    {
+       TextView e = (TextView) findViewById(R.id.foulb);
+       foul2 = foul2 +1;
+       e.setText(foul2);
+    }
+    public void ta2points(View v)
+    {teama = teama + 2;
+        displayteama();;
+    }
+
+    public void ta3points(View v)
+    {
+         teama = teama + 3;
+         displayteamb();;
+    }
+    public void foula(View v)
+    {
+       foul1 = foul1 + 1;
+       displayfoula();;
+    }
+    public void foulb(View v)
+    {
+        foul2 = foul2 + 1;
+        displayfoulb();
+    }
+
+    public void tb2points(View v)
+    {
+           teamb= teamb + 2;
+           displayteamb();
+    }
+    public void tb3points(View v)
+    {
+        teamb= teamb + 3;
+        displayteamb();
+    }
+
+
+
+
+}
